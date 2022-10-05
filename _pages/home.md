@@ -24,6 +24,7 @@ content:
     column_width: col-md-7
   - column_width: col-md-5
     column_content: []
+  id: about_me
 - template: section
   background_colour: White
   title: Projects
@@ -33,6 +34,7 @@ content:
   lead: ''
   layout: Full Width
   column: []
+  id: ''
 - template: section
   background_colour: Grey
   title: Services
@@ -42,6 +44,7 @@ content:
   lead: ''
   layout: 60/40
   column: []
+  id: ''
 - template: section
   background_colour: White
   title: Contact me
@@ -50,5 +53,6 @@ content:
   layout: 60/40
   content: []
   column: []
+  id: ''
 
 ---
