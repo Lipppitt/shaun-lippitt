@@ -19,7 +19,7 @@ content:
   column:
   - column_content:
     - template: section-header
-      title: ''
+      title: About me
       lead: ''
     column_width: col-md-7
   - column_width: col-md-5
