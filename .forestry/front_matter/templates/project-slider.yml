@@ -3,14 +3,22 @@ label: Project Slider
 hide_body: true
 fields:
 - name: projects
-  type: select
-  default: []
+  type: field_group_list
+  fields:
+  - name: project
+    type: select
+    default: []
+    config:
+      required: false
+      options: []
+      source:
+        type: pages
+        section: projects
+        file: 
+        path: 
+    label: Project
   config:
-    required: true
-    options: []
-    source:
-      type: pages
-      section: projects
-      file: 
-      path: 
+    min: 
+    max: 
+    labelField: 
   label: Projects
