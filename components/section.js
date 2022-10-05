@@ -9,10 +9,11 @@ export default function Section({
             <div className="container section-inner">
                 <div className="row align-items-center">
                     <div className="col-md-7">
-                        <h2 className="section__title">
-                            <span className="fadeInUp d-block section__title-text">{{title}}</span></h2>
+                        <h2 className="section__title"><span className="fadeInUp d-block section__title-text">{title}</span></h2>
                         <div className="section__content fadeIn">
-                            {{content}}
+                            {content.map(c => {
+                                {c.content}
+                            })}
                         </div>
                     </div>
                     <div className="col-md-5 justify-content-end">
