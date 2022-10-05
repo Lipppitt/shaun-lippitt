@@ -43,6 +43,9 @@ content:
   column:
   - column_width: col-md-12
     column_content:
+    - template: section-header
+      title: Projects
+      lead: ''
     - template: project-slider
       projects: []
   id: projects
