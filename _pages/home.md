@@ -28,7 +28,9 @@ content:
         Some of the technologies I work with are: PHP, Laravel, Wordpress, HTML, CSS/SASS, Javascript, jQuery, Vue.js, Node.js & React.
     column_width: col-md-7
   - column_width: col-md-5
-    column_content: []
+    column_content:
+    - template: section-image
+      image: ''
   id: about_me
 - template: section
   background_colour: White

@@ -38,10 +38,10 @@ fields:
     label: Column Content
     template_types:
     - section-header
-    - services-grid
-    - project-slider
     - section-text
     - section-image
+    - services-grid
+    - project-slider
     config:
       min: 
       max: 
