@@ -24,7 +24,7 @@ export default function Home({ getPage }) {
                       return (<Section key={index}
                           title={content.title}
                           lead={content.lead}
-                          content={content.content}
+                          columns={content.column}
                           backgroundColour ={content.backgroundColour}
                       />)
               }
@@ -38,6 +38,8 @@ export async function getStaticProps() {
     'title',
     'content'
   ]);
+
+  console.log(getPage);
 
   return {
     props: { getPage },
