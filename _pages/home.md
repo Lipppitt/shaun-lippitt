@@ -34,6 +34,8 @@ content:
       title: Projects
       lead: ''
     - template: project-slider
+      projects:
+      - project: _projects/at-solutions.md
   id: projects
 - template: section
   background_colour: Grey
