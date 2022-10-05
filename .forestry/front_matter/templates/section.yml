@@ -40,6 +40,7 @@ fields:
   - services-grid
   - project-slider
   - content
+  - section-image
   config:
     min: 
     max: 
