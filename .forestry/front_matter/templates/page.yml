@@ -7,3 +7,11 @@ fields:
   config:
     required: true
   label: Title
+- name: content
+  type: blocks
+  label: Content
+  template_types:
+  - section
+  config:
+    min: 
+    max: 
