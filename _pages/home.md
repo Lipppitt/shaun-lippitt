@@ -54,7 +54,12 @@ content:
     services: []
   lead: ''
   layout: 60/40
-  column: []
+  column:
+  - column_width: col-lg-3
+    column_content:
+    - template: section-header
+      title: What i do
+      lead: ''
   id: ''
 - template: section
   background_colour: White
