@@ -7,6 +7,14 @@ fields:
   config:
     required: false
   label: Label
+- name: name
+  type: text
+  config:
+    required: false
+  label: Name
+- name: required
+  type: boolean
+  label: Required
 - name: description
   type: text
   config:
