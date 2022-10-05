@@ -20,5 +20,12 @@ content:
   - template: project-slider
     projects: []
   lead: ''
+- template: section
+  background_colour: Grey
+  title: Services
+  content:
+  - template: services-grid
+    services: []
+  lead: ''
 
 ---
