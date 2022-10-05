@@ -60,6 +60,10 @@ content:
     - template: section-header
       title: What i do
       lead: ''
+  - column_width: col-lg-8 offset-lg-1
+    column_content:
+    - template: services-grid
+      services: []
   id: ''
 - template: section
   background_colour: White
