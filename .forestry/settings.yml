@@ -6,13 +6,9 @@ webhook_url:
 sections:
 - type: heading
   label: Content
-- type: document
-  path: pages
-  label: Pages
-  read_only: false
 - type: directory
   path: ''
-  label: Home
+  label: Pages
   create: all
   match: "**/*"
 upload_dir: uploads
