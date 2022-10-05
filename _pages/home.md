@@ -16,6 +16,14 @@ content:
   - template: section-image
     image: ''
   layout: 60/40
+  column:
+  - column_content:
+    - template: section-header
+      title: ''
+      lead: ''
+    column_width: col-md-7
+  - column_width: col-md-5
+    column_content: []
 - template: section
   background_colour: White
   title: Projects
@@ -24,6 +32,7 @@ content:
     projects: _projects/greybox-self-storage.md
   lead: ''
   layout: Full Width
+  column: []
 - template: section
   background_colour: Grey
   title: Services
@@ -32,6 +41,7 @@ content:
     services: []
   lead: ''
   layout: 60/40
+  column: []
 - template: section
   background_colour: White
   title: Contact me
@@ -39,5 +49,6 @@ content:
     you within 48 hours.
   layout: 60/40
   content: []
+  column: []
 
 ---
