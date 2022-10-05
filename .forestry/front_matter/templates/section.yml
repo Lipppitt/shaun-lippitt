@@ -40,6 +40,7 @@ fields:
     - section-header
     - services-grid
     - project-slider
+    - section-text
     config:
       min: 
       max: 
