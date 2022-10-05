@@ -18,4 +18,5 @@ fields:
     min: 
     max: 
 pages:
+- _pages/home-1.md
 - _pages/home.md
