@@ -33,17 +33,6 @@ fields:
       file: 
       path: 
   label: Background Colour
-- name: content
-  type: blocks
-  label: Content
-  template_types:
-  - services-grid
-  - project-slider
-  - content
-  - section-image
-  config:
-    min: 
-    max: 
 - name: layout
   type: select
   default: []
