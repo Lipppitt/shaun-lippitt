@@ -41,6 +41,7 @@ fields:
     - services-grid
     - project-slider
     - section-text
+    - section-image
     config:
       min: 
       max: 
