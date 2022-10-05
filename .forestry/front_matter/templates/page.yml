@@ -16,3 +16,5 @@ fields:
   config:
     min: 
     max: 
+pages:
+- pages/home.md
