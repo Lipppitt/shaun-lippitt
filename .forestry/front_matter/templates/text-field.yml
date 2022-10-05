@@ -2,8 +2,13 @@
 label: Text Field
 hide_body: true
 fields:
-- name: text
+- name: label
   type: text
   config:
     required: false
-  label: Text Field
+  label: Label
+- name: description
+  type: text
+  config:
+    required: false
+  label: Description
