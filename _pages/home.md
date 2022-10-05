@@ -40,8 +40,12 @@ content:
     projects: _projects/greybox-self-storage.md
   lead: ''
   layout: Full Width
-  column: []
-  id: ''
+  column:
+  - column_width: col-md-12
+    column_content:
+    - template: project-slider
+      projects: []
+  id: projects
 - template: section
   background_colour: Grey
   title: Services
