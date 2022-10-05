@@ -7,17 +7,17 @@ sections:
 - type: heading
   label: Content
 - type: directory
-  path: pages
+  path: _pages
   label: Pages
   create: all
   match: "**/*"
 - type: directory
-  path: projects
+  path: _projects
   label: Projects
   create: all
   match: "**/*"
 - type: directory
-  path: services
+  path: _services
   label: Services
   create: documents
   match: "**/*"
