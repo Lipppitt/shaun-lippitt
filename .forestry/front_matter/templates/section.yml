@@ -1,4 +1,34 @@
 ---
 label: Section
 hide_body: true
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: lead
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Lead
+- name: background_colour
+  type: select
+  default: White
+  config:
+    required: false
+    options:
+    - Primary
+    - Secondary
+    - White
+    - Grey
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Background Colour
