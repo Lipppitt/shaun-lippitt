@@ -33,3 +33,26 @@ fields:
       file: 
       path: 
   label: Layout
+- name: column
+  type: field_group_list
+  fields:
+  - name: column_width
+    type: text
+    config:
+      required: false
+    label: Column Width
+  - name: column_content
+    type: blocks
+    label: Column Content
+    template_types:
+    - section-header
+    - services-grid
+    - project-slider
+    config:
+      min: 
+      max: 
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Column
