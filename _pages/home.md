@@ -30,5 +30,12 @@ content:
     services: []
   lead: ''
   layout: 60/40
+- template: section
+  background_colour: White
+  title: Contact me
+  lead: Use the contact form below to get in touch and i’ll try my best to back to
+    you within 48 hours.
+  layout: 60/40
+  content: []
 
 ---
