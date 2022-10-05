@@ -35,8 +35,11 @@ content:
       lead: ''
     - template: project-slider
       projects:
-      - project: _projects/at-solutions.md
-      - project: _projects/greybox-self-storage.md
+      - _projects/greybox-self-storage.md
+      - _projects/at-solutions.md
+      project:
+      - _projects/greybox-self-storage.md
+      - _projects/at-solutions.md
   id: projects
 - template: section
   background_colour: Grey
