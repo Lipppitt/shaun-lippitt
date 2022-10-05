@@ -92,6 +92,12 @@ content:
         name: name
         required: true
         type: text
+      - template: text-field
+        label: Your email
+        name: email
+        required: true
+        description: Enter your email address
+        type: email
   id: contact
 
 ---
