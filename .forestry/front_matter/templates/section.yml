@@ -27,7 +27,7 @@ fields:
     config:
       required: true
     label: Column Width
-    default: '100'
+    default: col-md-12
   - name: column_content
     type: blocks
     label: Column Content
