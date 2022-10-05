@@ -20,3 +20,5 @@ fields:
   type: image_gallery
   config: {}
   label: Gallery
+pages:
+- projects/greybox-self-storage.md
