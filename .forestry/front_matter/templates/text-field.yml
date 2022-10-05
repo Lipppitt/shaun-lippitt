@@ -20,3 +20,39 @@ fields:
   config:
     required: false
   label: Description
+- name: type
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - button color date datetime-local email file hidden image month number password
+      radio range reset search submit tel text time url week
+    - button
+    - checkbox
+    - color
+    - date
+    - datetime-local
+    - email
+    - file
+    - hidden
+    - image
+    - month
+    - number
+    - password
+    - radio
+    - range
+    - reset
+    - search
+    - submit
+    - tel
+    - text
+    - time
+    - url
+    - week
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Type
