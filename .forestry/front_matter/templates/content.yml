@@ -2,7 +2,7 @@
 label: Content
 hide_body: true
 fields:
-- name: content
+- name: section-content
   type: textarea
   default: ''
   config:
@@ -10,4 +10,4 @@ fields:
     wysiwyg: true
     schema:
       format: markdown
-  label: Content
+  label: Section Content
