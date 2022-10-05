@@ -18,7 +18,7 @@ content:
   title: Projects
   content:
   - template: project-slider
-    projects: []
+    projects: _projects/greybox-self-storage.md
   lead: ''
 - template: section
   background_colour: Grey
