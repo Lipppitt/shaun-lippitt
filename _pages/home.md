@@ -88,7 +88,10 @@ content:
       fields:
       - template: text-field
         label: Your Name
-        description: ''
+        description: Enter your name here
+        name: name
+        required: true
+        type: text
   id: contact
 
 ---
