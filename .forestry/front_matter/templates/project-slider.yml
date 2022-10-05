@@ -1,4 +1,16 @@
 ---
 label: Project Slider
 hide_body: true
-fields: []
+fields:
+- name: projects
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: projects
+      file: 
+      path: 
+  label: Projects
