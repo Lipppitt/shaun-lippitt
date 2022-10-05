@@ -17,7 +17,7 @@ sections:
   create: all
   match: "**/*"
 - type: directory
-  path: Services
+  path: services
   label: Services
   create: documents
   match: "**/*"
