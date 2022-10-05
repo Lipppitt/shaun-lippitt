@@ -43,3 +43,17 @@ fields:
   config:
     min: 
     max: 
+- name: layout
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - 60/40
+    - Full Width
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Layout
