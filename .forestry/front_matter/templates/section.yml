@@ -32,3 +32,12 @@ fields:
       file: 
       path: 
   label: Background Colour
+- name: content
+  type: blocks
+  label: Content
+  template_types:
+  - services-grid
+  - project-slider
+  config:
+    min: 
+    max: 
