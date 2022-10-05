@@ -1,4 +1,10 @@
 ---
 label: Hero
 hide_body: true
-fields: []
+display_field: title
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
