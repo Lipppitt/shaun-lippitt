@@ -108,6 +108,12 @@ content:
         label: Your message
         name: message
         required: true
+      - template: text-field
+        label: Send
+        type: submit
+        name: ''
+        required: false
+        description: ''
   id: contact
 
 ---
