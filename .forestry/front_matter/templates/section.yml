@@ -19,20 +19,6 @@ fields:
       file: 
       path: 
   label: Background Colour
-- name: layout
-  type: select
-  default: []
-  config:
-    required: false
-    options:
-    - 60/40
-    - Full Width
-    source:
-      type: simple
-      section: 
-      file: 
-      path: 
-  label: Layout
 - name: column
   type: field_group_list
   fields:
