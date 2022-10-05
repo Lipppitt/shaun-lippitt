@@ -104,6 +104,10 @@ content:
         description: Enter your phone number
         type: tel
         required: false
+      - template: textarea
+        label: Your message
+        name: message
+        required: true
   id: contact
 
 ---
