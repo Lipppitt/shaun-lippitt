@@ -35,7 +35,7 @@ content:
       lead: ''
     - template: project-slider
       projects:
-      - project: []
+      - project: _projects/at-solutions.md
       - project: _projects/greybox-self-storage.md
   id: projects
 - template: section
