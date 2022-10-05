@@ -3,20 +3,6 @@ label: Section
 hide_body: true
 display_field: title
 fields:
-- name: title
-  type: text
-  config:
-    required: true
-  label: Title
-- name: lead
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: false
-    schema:
-      format: markdown
-  label: Lead
 - name: background_colour
   type: select
   default: White
