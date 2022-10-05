@@ -12,6 +12,7 @@ fields:
   type: blocks
   label: Content
   template_types:
+  - hero
   - section
   config:
     min: 
