@@ -39,8 +39,9 @@ fields:
   - name: column_width
     type: text
     config:
-      required: false
+      required: true
     label: Column Width
+    default: '100'
   - name: column_content
     type: blocks
     label: Column Content
