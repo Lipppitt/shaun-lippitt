@@ -39,6 +39,7 @@ fields:
   template_types:
   - services-grid
   - project-slider
+  - content
   config:
     min: 
     max: 
