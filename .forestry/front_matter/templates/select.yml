@@ -1,4 +1,35 @@
 ---
 label: Select
 hide_body: true
-fields: []
+fields:
+- name: label
+  type: text
+  config:
+    required: false
+  label: Label
+- name: name
+  type: text
+  config:
+    required: false
+  label: Name
+- name: required
+  type: boolean
+  label: Required
+- name: options
+  type: field_group_list
+  fields:
+  - name: value
+    type: text
+    config:
+      required: false
+    label: Value
+  - name: label
+    type: text
+    config:
+      required: false
+    label: Label
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Options
