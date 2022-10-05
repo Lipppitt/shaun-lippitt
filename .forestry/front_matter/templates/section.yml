@@ -22,6 +22,11 @@ fields:
 - name: column
   type: field_group_list
   fields:
+  - name: id
+    type: text
+    config:
+      required: true
+    label: ID
   - name: column_width
     type: text
     config:
