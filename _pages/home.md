@@ -93,11 +93,17 @@ content:
         required: true
         type: text
       - template: text-field
-        label: Your email
+        label: Your Email
         name: email
         required: true
         description: Enter your email address
         type: email
+      - template: text-field
+        label: Your Telephone
+        name: telephone
+        description: Enter your phone number
+        type: tel
+        required: false
   id: contact
 
 ---
