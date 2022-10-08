@@ -1,0 +1,37 @@
+.hero {
+  padding: 2rem 0;
+  height: calc(100vh - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 3rem;
+    @include media-breakpoint-up(md) {
+      font-size: 3.5rem;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 4.5rem;
+    }
+    margin-top: 2rem;
+    letter-spacing: -1px;
+    animation-delay: 1.1s;
+  }
+}
+
+.hero-page-down {
+  position: absolute;
+  bottom: 68px;
+  animation-delay: 1.5s;
+}
+
+a.hero-page-down-arrow {
+  width: 48px;
+  display: block;
+  animation: arrowDownBounce 3s ease-in-out infinite;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}

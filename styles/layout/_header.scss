@@ -1,0 +1,46 @@
+.site-header {
+  padding: 0.875rem 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99999;
+  background-color: white;
+  border-bottom: 1px solid #f3f3f3;
+  animation-delay: 600ms;
+
+  .logo {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    align-self: end;
+    color: white;
+    padding: 0.5rem;
+    line-height: 1;
+
+    svg {
+      width: 48px;
+      height: auto;
+    }
+  }
+
+  &__contact-btn {
+    @extend .btn;
+  }
+}
+
+#theme_switch {
+  width: 25px;
+  display: flex;
+  margin-left: 2rem;
+  background: none;
+  padding: 0;
+  border: none;
+  align-items: center;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
+

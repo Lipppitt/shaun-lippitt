@@ -1,0 +1,13 @@
+.form-errors {
+  margin-bottom: 2rem;
+
+  & > p {
+    background-color: rgba(220, 0, 0, 0.2);
+    border-radius: 3px;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ffa6a8;
+    color: #761c1c;
+    margin-bottom: .75rem;
+  }
+}

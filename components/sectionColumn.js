@@ -24,7 +24,7 @@ export default function SectionColumn({
                     case 'section-image' :
                         return <SectionImage image='content.image'/>
                     case 'project-slider' :
-                        return <ProjectSlider projects={content.projects}/>
+                        return <ProjectSlider projectIds={content.projects}/>
                     case 'services-grid' :
                         return <ServicesGrid services={content.services}/>
                     case 'form' :

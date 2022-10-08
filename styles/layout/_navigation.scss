@@ -1,0 +1,11 @@
+.menu > li {
+  list-style: none;
+  margin-right: 2rem;
+  @include media-breakpoint-up(md) {
+    margin-right: 2.875rem;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}

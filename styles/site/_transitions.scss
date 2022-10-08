@@ -1,0 +1,88 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@keyframes arrowDownBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  90% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}
+
+@keyframes sectionTitleLine {
+  0% {
+    transform: scale(0, 1);
+  }
+  100% {
+    transform: scale(1);
+    visibility: visible;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 400ms;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+  }
+  .fadeInUp {
+    animation-name: fadeInUp;
+    animation-duration: 400ms;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+  }
+  .fadeInDown {
+    animation-name: fadeInDown;
+    animation-duration: 400ms;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+  }
+}

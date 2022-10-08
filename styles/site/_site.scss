@@ -1,0 +1,7 @@
+@import "dark-mode";
+@import "transitions";
+
+.sticky {
+  position: sticky;
+  top: calc(92.15px + 3rem);
+}

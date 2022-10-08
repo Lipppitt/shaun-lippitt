@@ -1,0 +1,15 @@
+.section-about {
+  img {
+    border-radius: 50%;
+    max-width: 450px;
+    width: 100%;
+    margin: 0 0 0 auto;
+    @include media-breakpoint-up(lg) {
+      margin-left: auto;
+    }
+    display: block;
+    filter: brightness(1.4) contrast(1);
+    animation-duration: 1s!important;
+    animation-delay: .5s!important;
+  }
+}

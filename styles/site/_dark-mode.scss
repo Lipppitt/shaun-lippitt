@@ -1,0 +1,46 @@
+body.dark-theme, body.dark-theme .site-header, body.dark-theme .section {
+  background-color: #121212;
+  color: #dedede;
+}
+
+body.dark-theme .contact-row__info {
+  color: #dedede;
+}
+
+body.dark-theme .menu > li a {
+  color: #dedede;
+}
+
+body.dark-theme .site-header {
+  border-color: #363636;
+}
+
+body.dark-theme .form-label,
+body.dark-theme .section__lead,
+{
+  color: #dddddd;
+}
+
+body.dark-theme .icon--wordpress-development svg g path,
+body.dark-theme .icon--bespoke-web-design svg g:first-child path,
+body.dark-theme .icon--wordpress-optimisation svg path:first-child,
+body.dark-theme .icon--wordpress-optimisation svg path,
+body.dark-theme .icon.wordpress-optimisation svg > path,
+body.dark-theme .icon.custom-web-development svg path:first-child,
+body.dark-theme .icon.wordpress-hosting svg > path,
+{
+  stroke: #797979;
+}
+
+body.dark-theme .contact-row__icon path {
+  fill: #797979;
+}
+
+body.dark-theme #theme_switch svg g path {
+  fill: #d4d4d4 !important;
+}
+
+body.dark-theme .site-header .logo svg path,
+body.dark-theme .hero-page-down-arrow svg path {
+  fill: #dddddd;
+}

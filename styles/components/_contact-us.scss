@@ -1,0 +1,26 @@
+.contact-row {
+  margin-bottom: 14px;
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 8px;
+}
+
+svg.contact-row__icon {
+  height: 42px;
+}
+
+.contact-row__info {
+  text-decoration: none;
+  color: black;
+  font-size: 1.125rem;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.contact-rows { /* background-color: #f9f9f9; */
+  height: 100%; /* padding: 2rem 0; */
+}
+
+input:focus {
+}
+
+input:target {
+}
