@@ -54,7 +54,12 @@ content:
   - column_width: col-lg-8 offset-lg-1
     column_content:
     - template: services-grid
-      services: []
+      services:
+      - _services/custom-wordpress-development.md
+      - _services/bespoke-web-design.md
+      - _services/custom-web-development.md
+      - _services/wordpress-optimisation.md
+      - _services/wordpress-hosting.md
   id: services
 - template: section
   background_colour: White
