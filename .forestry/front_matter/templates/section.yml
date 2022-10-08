@@ -17,7 +17,7 @@ fields:
     - Primary
     - Secondary
     - White
-    - Grey
+    - Gray-100
     source:
       type: simple
       section: 
