@@ -21,7 +21,7 @@ content:
   - column_width: col-md-5
     column_content:
     - template: section-image
-      image: ''
+      image: "/uploads/me-1.jpeg"
   id: about_me
 - template: section
   background_colour: White
