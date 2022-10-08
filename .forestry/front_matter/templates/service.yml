@@ -21,3 +21,5 @@ fields:
   config:
     required: false
   label: Icon
+pages:
+- _services/custom-wordpress-development.md
