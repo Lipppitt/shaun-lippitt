@@ -1,4 +1,23 @@
 ---
 label: Service
 hide_body: true
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+- name: short_description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Short Description
+- name: icon
+  type: text
+  config:
+    required: false
+  label: Icon
