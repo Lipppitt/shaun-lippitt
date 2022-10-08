@@ -3,14 +3,9 @@ label: Services Grid
 hide_body: true
 fields:
 - name: services
-  type: select
-  default: []
+  type: list
   config:
-    required: false
-    options: []
-    source:
-      type: pages
-      section: services
-      file: 
-      path: 
+    use_select: false
+    min: 
+    max: 
   label: Services
