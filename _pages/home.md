@@ -42,7 +42,7 @@ content:
       - _projects/at-solutions.md
   id: projects
 - template: section
-  background_colour: Grey
+  background_colour: Gray-100
   title: Services
   lead: ''
   column:
