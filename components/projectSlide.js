@@ -1,16 +1,14 @@
 export default function ProjectSlide(
     {
-        key,
-        title,
-        gallery
+        slide,
     }) {
     return (
         <>
-            <div className="col-sm-6 project">
+            <div className="project">
                 <a className="project-thumbnail" href="">
                     <div className="project-thumbnail__image"/>
                     <header className="project-thumbnail__header">
-                        <h3>{title}</h3>
+                        <h3>{slide.title}</h3>
                         <span></span>
                     </header>
                 </a>

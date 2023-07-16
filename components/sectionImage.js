@@ -1,11 +1,9 @@
-import Hero from "./hero";
-import Section from "./section";
-
+import Image from "next/image";
 export default function SectionImage({
-    width,
-    content,
+    image,
+    altTag
 }) {
     return (
-        <></>
+        <Image alt={altTag} src={''} layout='fill'/>
     )
 }

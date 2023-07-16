@@ -4,6 +4,8 @@ import ProjectSlider from "./projectSlider";
 import ServicesGrid from "./servicesGrid";
 import Form from "./form";
 import SectionImage from "./sectionImage";
+import {ScrollSlider} from "./scrollSlider";
+import ProjectSlide from "./projectSlide";
 
 export default function SectionColumn({
     width,
@@ -16,19 +18,32 @@ export default function SectionColumn({
                 switch (template) {
                     case 'section-header' :
                         return <SectionHeader
+                            key={index}
                             title={content.title}
                             lead={content.lead}
                         />
                     case 'section-text' :
-                        return <SectionText text={content.text}/>
+                        return <SectionText
+                            key={index}
+                            text={content.text}/>
                     case 'section-image' :
-                        return <SectionImage image='content.image'/>
+                        return <SectionImage
+                            key={index}
+                            image={content.image}/>
                     case 'project-slider' :
-                        return <ProjectSlider projectIds={content.projects}/>
+                        return <ScrollSlider
+                            key={index}
+                            slides={content.projects}
+                            SlideComponent={ProjectSlide}
+                        />
                     case 'services-grid' :
-                        return <ServicesGrid services={content.services}/>
+                        return <ServicesGrid
+                            key={index}
+                            services={content.services}/>
                     case 'form' :
-                        return <Form fields={content.fields}/>
+                        return <Form
+                            key={index}
+                            fields={content.fields}/>
                 }
             })}
         </div>

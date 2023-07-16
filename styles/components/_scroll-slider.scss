@@ -1,0 +1,11 @@
+.scroll-slider {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+.scroll-slide {
+  display: inline-block;
+  vertical-align: top;
+  opacity: .9;
+  transition: all ease .4s;
+}
