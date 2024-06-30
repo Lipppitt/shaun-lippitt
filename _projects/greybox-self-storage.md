@@ -1,6 +1,10 @@
 ---
 title: Greybox Self Storage
-description: ''
-gallery: []
-
+description: fasgasg
+gallery:
+  - /greyboxselfstorage.jpg
+featuredImage:
+  - /greyboxselfstorage.jpg
+featured_image: /greyboxselfstorage.jpg
 ---
+

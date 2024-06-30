@@ -1,0 +1,25 @@
+.post-author {
+  display: flex;
+  margin-top: 3rem;
+  align-items: center;
+}
+
+.post-author__image {
+  margin-right: 1rem;
+}
+
+img.author__image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #363636;
+}
+
+.post-author p {
+  margin-bottom: 0;
+}
+
+.separator {
+  margin: 0 8px;
+  color: #40fba7;
+}

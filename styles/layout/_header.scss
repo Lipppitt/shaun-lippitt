@@ -32,7 +32,10 @@
 #theme_switch {
   width: 25px;
   display: flex;
-  margin-left: 2rem;
+  margin-left: 1rem;
+  @include media-breakpoint-up('sm') {
+    margin-left: 2rem;
+  }
   background: none;
   padding: 0;
   border: none;
@@ -41,6 +44,11 @@
   svg {
     width: 100%;
     height: auto;
+    transition: all ease 200ms;
+  }
+
+  &:hover svg {
+    transform: rotate(145deg);
   }
 }
 

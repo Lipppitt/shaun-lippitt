@@ -3,6 +3,7 @@
   color: inherit;
   margin-bottom: 2rem;
   display: block;
+  cursor: pointer;
 
   &__header {
     h3 {
@@ -17,12 +18,51 @@
 
   &__image {
     width: 100%;
-    padding: 40%;
+    aspect-ratio: 4 / 3;
     background-color: #eaeaea;
     margin-bottom: 1.5rem;
     border-radius: .35rem;
+    background-position: center center;
   }
 }
+
+.single-project {
+  display: flex;
+  padding-top: 5.5rem;
+
+  .section {
+    padding: 3rem 2rem;
+
+    &__title {
+      margin-bottom: .75rem;
+    }
+
+    &__content {
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .project-thumbnail__image {
+    padding-bottom: 0;
+    height: 100vh;
+    margin-bottom: 0;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      //background: rgb(0,0,0);
+      //background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 69%);
+    }
+  }
+}
+
 
 #project_info_panel {
   position: fixed;
@@ -134,3 +174,15 @@ button#projects_display svg {
   background-position: left;
 }
 
+.animate-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+}
+
+body.dark-theme .animate-backdrop {
+  background-color: #121212 !important;
+}

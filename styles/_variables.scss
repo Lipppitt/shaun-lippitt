@@ -9,11 +9,12 @@ $h4-font-size: 1rem;
 
 $headings-font-weight: 600;
 
-
-$primary: #D70000;
-$secondary: #1B0E73;
+$primary: #CB57FA;
+$secondary: #3FFAA6;
 $gray-100: #F2F2F0;
+$gray-200: #949494;
 $tertiary: #F2B705;
+$error: #D70000;
 
 $container-max-widths: (
   sm: 540px,
@@ -22,3 +23,5 @@ $container-max-widths: (
   xl: 1140px,
   xxl: 1370px
 ) !default;
+
+

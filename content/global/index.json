@@ -1,0 +1,36 @@
+{
+  "header": {
+    "name": "Shaun Lippitt",
+    "nav": [
+      {
+        "href": "#services",
+        "label": "Sevices"
+      },
+      {
+        "href": "#about",
+        "label": "About"
+      },
+      {
+        "href": "#projects",
+        "label": "Projects"
+      },
+      {
+        "href": "posts",
+        "label": "Blog"
+      }
+    ]
+  },
+  "footer": {
+    "color": "default",
+    "social": {
+      "facebook": "/",
+      "twitter": "/",
+      "instagram": "/"
+    }
+  },
+  "theme": {
+    "color": "blue",
+    "font": "sans",
+    "darkMode": "system"
+  }
+}

@@ -1,0 +1,33 @@
+.splash-screen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999999;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 75px;
+
+    path {
+      fill: transparent;
+      stroke: #bdbdbd;
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      animation: dash 5s linear forwards;
+    }
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 500;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
