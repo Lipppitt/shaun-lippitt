@@ -5,5 +5,7 @@ short_description: >-
   solutions to improve WordPress performance.
 icon:
   name: WordPressOptimisation
+_template: service
 ---
+
 

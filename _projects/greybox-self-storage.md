@@ -6,5 +6,7 @@ gallery:
 featuredImage:
   - /greyboxselfstorage.jpg
 featured_image: /greyboxselfstorage.jpg
+_template: project
 ---
+
 

@@ -5,5 +5,7 @@ short_description: >-
   solutions to bring your idea to life.
 icon:
   name: CustomWebDevelopment
+_template: service
 ---
+
 

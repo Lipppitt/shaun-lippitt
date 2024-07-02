@@ -5,5 +5,7 @@ short_description: >-
   WordPress website to the next level.
 icon:
   name: CustomWordPressDevelopment
+_template: service
 ---
+
 

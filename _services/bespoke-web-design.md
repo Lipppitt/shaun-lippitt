@@ -67,7 +67,9 @@ content:
               be. We weave a unique digital tapestry that suits your objectives.
             template: section-text
     template: section
+_template: service
 ---
+
 
 
 
