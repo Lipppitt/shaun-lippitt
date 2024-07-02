@@ -58,10 +58,10 @@ export const Header = ({ data }) => {
                                                 key={`${item.label}-${i}`}
                                                 className={`${activeItem ? 'active' : ''}`}
                                             >
-                                                <Link href={`${prefix}/${item.href}`} passHref>
-                                                    <a className={`${activeItem ? 'active' : ''}`}>
+                                                <Link href={`${prefix}/${item.href}`}
+                                                      className={`${activeItem ? 'active' : ''}`}
+                                                      passHref>
                                                         {item.label}
-                                                    </a>
                                                 </Link>
                                             </li>
                                         );

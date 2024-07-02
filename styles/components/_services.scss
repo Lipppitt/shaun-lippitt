@@ -18,3 +18,8 @@
 .services *:last-child .service {
   margin-bottom: 0;
 }
+
+.services a {
+  color: inherit;
+  text-decoration: none;
+}

@@ -19,8 +19,8 @@ export const PostCard = ({postData}) => {
                 key={post._sys.filename}
                 href={`/posts/` + post._sys.filename}
                 passHref
+                className={'post'}
             >
-                <a className={'post'}>
                     <div className={'d-flex flex-column h-100'}>
                         {post.featured_image && (
                             <div className="post-thumbnail">
@@ -45,7 +45,6 @@ export const PostCard = ({postData}) => {
                             date={formattedDate}
                         />
                     </div>
-                </a>
             </Link>
         </>
     )
