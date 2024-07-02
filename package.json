@@ -24,7 +24,8 @@
     "resend": "^3.4.0",
     "sass": "^1.77.6",
     "split-type": "^0.3.4",
-    "tinacms": "^1.6.1"
+    "tinacms": "^1.6.1",
+    "tinacms-authjs": "^2.0.4"
   },
   "devDependencies": {
     "eslint": "8.0.0",

@@ -5,9 +5,8 @@ import {pageFields, projectFields, sectionFields, serviceFields} from "./templat
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
 
 export default defineConfig({
-  contentApiUrlOverride: '/api/tina/gql',
   branch,
-  clientId: process.env.TINA_CLIENT_ID, // Get this from tina.io
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID, // Get this from tina.io
   token: process.env.TINA_TOKEN, // Get this from tina.io
   build: {
     outputFolder: "admin",
