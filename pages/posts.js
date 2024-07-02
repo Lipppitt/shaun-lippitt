@@ -1,4 +1,4 @@
-import client from "../tina/__generated__/databaseClient";
+import client from "../tina/__generated__/client";
 import {Layout} from "../components/layout/layout";
 import {Container} from "../components/util/container";
 import {Posts} from "../components/posts/posts";
