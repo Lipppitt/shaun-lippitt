@@ -10,6 +10,7 @@
   "dependencies": {
     "@tinacms/cli": "^1.5.46",
     "@tinacms/datalayer": "^1.2.35",
+    "@vercel/speed-insights": "^1.0.12",
     "axios": "^1.7.2",
     "bootstrap": "5.1.3",
     "date-fns": "^3.6.0",
