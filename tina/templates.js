@@ -183,6 +183,11 @@ export function section_imageFields() {
             label: "Image",
         },
         {
+            name: "alt",
+            label: "Alt text",
+            type: "string",
+        },
+        {
             name: "align",
             label: "Align",
             type: "string",
@@ -193,10 +198,10 @@ export function section_imageFields() {
                 value: "left",
                 label: "Left"
             },
-                {
-                    value: "right",
-                    label: "Right"
-                }],
+            {
+                value: "right",
+                label: "Right"
+            }],
         },
     ];
 }

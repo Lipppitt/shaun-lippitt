@@ -3,10 +3,9 @@ import SectionText from "./sectionText";
 import ServicesGrid from "./servicesGrid";
 import SectionImage from "./sectionImage";
 import SectionGallery from "./sectionGallery";
-import CustomForm from "./form";
-import {Posts} from "../posts/posts";
 import RecentPosts from "./recentPosts";
 import {usePostContext} from "../../context/postsContext";
+import CustomForm from "./form";
 
 export default function SectionColumn({
     width,
@@ -39,6 +38,7 @@ export default function SectionColumn({
                             key={index}
                             image={content.image}
                             align={content.align}
+                            altTag={content.alt}
                         />
                     case "ContentSectionColumnColumn_contentSection_gallery" :
                         return <SectionGallery

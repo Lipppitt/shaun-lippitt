@@ -6,7 +6,7 @@ import {PostMeta} from "./postMeta";
 import Image from "next/image";
 
 export const PostCard = ({postData}) => {
-    const post = postData.node
+    const post = postData;
     const date = new Date(post.date)
     let formattedDate = ''
     if (!isNaN(date.getTime())) {
@@ -16,8 +16,8 @@ export const PostCard = ({postData}) => {
     return (
         <>
             <Link
-                key={post._sys.filename}
-                href={`/posts/` + post._sys.filename}
+                key={post.slug}
+                href={`/posts/` + post.slug}
                 passHref
                 className={'post'}
             >
@@ -29,8 +29,7 @@ export const PostCard = ({postData}) => {
                                     title=""
                                     width={450}
                                     height={300}
-                                    layout="responsive"
-                                    objectFit="cover"
+                                    alt={post.title}
                                 />
                             </div>
                         )}

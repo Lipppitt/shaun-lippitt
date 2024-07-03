@@ -18,6 +18,7 @@ content:
       - column_width: col-md-5 offset-md-1
         column_content:
           - image: /me.jpg
+            alt: shaun
             align: center
             template: section-image
     template: section

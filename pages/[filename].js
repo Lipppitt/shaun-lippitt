@@ -85,16 +85,17 @@ export async function getServerSideProps({params}) {
     }
 
     const pageProps = {
-            data: pageResponse.data,
+            data: pageResponse?.data,
             query: pageResponse.query,
             variables: pageResponse.variables,
-            posts: posts.data?.postsConnection.edges.edges.map((post) => {
+            posts: posts?.data?.postsConnection.edges.map((post) => {
                 return {
                     slug: post.node._sys.filename,
-                    date: post.date,
-                    title: post.title,
-                    excerpt: post.excerpt,
-                    featured_image: post.featured_image
+                    date: post.node.date,
+                    title: post.node.title,
+                    excerpt: post.node.excerpt,
+                    featured_image: post.node.featured_image,
+                    author: post.node.author
                 }
             })
     }

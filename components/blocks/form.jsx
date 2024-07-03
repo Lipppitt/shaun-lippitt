@@ -2,12 +2,10 @@ import {ErrorMessage, Field, Form, Formik} from "formik";
 import axios from "axios";
 import {useReCaptcha} from "next-recaptcha-v3";
 
-export default function CustomForm({
-                                       fields,
-                                   }) {
+export default function CustomForm({fields}) {
 
     // Import 'executeRecaptcha' using 'useReCaptcha' hook
-    const { executeRecaptcha } = useReCaptcha();
+    const {executeRecaptcha} = useReCaptcha();
 
     return (
         <Formik
