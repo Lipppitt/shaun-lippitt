@@ -74,20 +74,29 @@ export default function Filename(props) {
 }
 
 export async function getServerSideProps({params}) {
-    let postResponse = {}
+    let pageResponse = {}
     let posts = {};
     try {
-        postResponse = await client.queries.pages({ relativePath: `${params.filename}.md` });
+        pageResponse = await client.queries.pages({ relativePath: `${params.filename}.md` });
         posts = await client.queries.postsConnection({ first: 2 });
+
     } catch {
         // swallow errors related to document creation
     }
 
     const pageProps = {
-            data: postResponse.data,
-            query: postResponse.query,
-            variables: postResponse.variables,
-            posts: posts.data?.postsConnection.edges
+            data: pageResponse.data,
+            query: pageResponse.query,
+            variables: pageResponse.variables,
+            posts: posts.data?.postsConnection.edges.edges.map((post) => {
+                return {
+                    slug: post.node._sys.filename,
+                    date: post.date,
+                    title: post.title,
+                    excerpt: post.excerpt,
+                    featured_image: post.featured_image
+                }
+            })
     }
 
     return {
