@@ -2,9 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images: {
-    domains: ['assets.tina.io'],
-  },
+  remotePatterns: [
+    {
+      protocol: 'https',
+      hostname: 'assets.tina.io',
+      pathname: '**',
+    },
+  ],
   async rewrites() {
     return [{
       source: '/',
