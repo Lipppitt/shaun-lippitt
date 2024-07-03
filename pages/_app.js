@@ -1,5 +1,6 @@
 import {ReCaptchaProvider} from "next-recaptcha-v3";
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from "@vercel/analytics/react"
 import "../styles/styles.scss";
 function MyApp({ Component, pageProps }) {
   return (
@@ -8,6 +9,7 @@ function MyApp({ Component, pageProps }) {
               <Component {...pageProps} />
           </ReCaptchaProvider>
           <SpeedInsights/>
+          <Analytics/>
       </>
   );
 }
