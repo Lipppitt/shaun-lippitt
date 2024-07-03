@@ -19,6 +19,23 @@ const spaceGrotesk = localFont({
             weight: '700'
         }
     ],
+});
+
+const dmSans = localFont({
+    src: [
+        {
+            path: '../public/fonts/DMSans-Regular.ttf',
+            weight: '400',
+        },
+        {
+            path: '../public/fonts/DMSans-Semibold.ttf',
+            weight: '400',
+        },
+        {
+            path: '../public/fonts/DMSans-Bold.ttf',
+            weight: '700'
+        },
+    ]
 })
 
 function MyApp({ Component, pageProps }) {
@@ -27,6 +44,7 @@ function MyApp({ Component, pageProps }) {
           <style jsx global>{`
                 :root {
                     --font-spacegrotesk: ${spaceGrotesk.style.fontFamily};
+                    --font-dmsans: ${dmSans.style.fontFamily}
                 }
             `}</style>
           <ReCaptchaProvider>
