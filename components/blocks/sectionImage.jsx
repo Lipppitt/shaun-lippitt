@@ -21,10 +21,6 @@ export default function SectionImage({
 
     const el = useRef(null);
 
-    useEffect(() => {
-
-    }, []);
-
     return (
         <div className="section-image d-flex">
             <div className={`${containerClass}`} ref={el}>

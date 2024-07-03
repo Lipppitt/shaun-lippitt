@@ -27,14 +27,14 @@ const dmSans = localFont({
             path: '../public/fonts/DMSans-Regular.ttf',
             weight: '400',
         },
-        {
-            path: '../public/fonts/DMSans-Semibold.ttf',
-            weight: '400',
-        },
-        {
-            path: '../public/fonts/DMSans-Bold.ttf',
-            weight: '700'
-        },
+        // {
+        //     path: '../public/fonts/DMSans-Semibold.ttf',
+        //     weight: '400',
+        // },
+        // {
+        //     path: '../public/fonts/DMSans-Bold.ttf',
+        //     weight: '700'
+        // },
     ]
 })
 
