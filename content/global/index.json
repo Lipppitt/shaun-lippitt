@@ -1,10 +1,23 @@
 {
+  "footer": {
+    "color": "default",
+    "social": {
+      "facebook": "/",
+      "twitter": "/",
+      "instagram": "/"
+    }
+  },
+  "theme": {
+    "color": "blue",
+    "font": "sans",
+    "darkMode": "system"
+  },
   "header": {
     "name": "Shaun Lippitt",
     "nav": [
       {
         "href": "#services",
-        "label": "Sevices"
+        "label": "Services"
       },
       {
         "href": "#about",
@@ -19,18 +32,5 @@
         "label": "Blog"
       }
     ]
-  },
-  "footer": {
-    "color": "default",
-    "social": {
-      "facebook": "/",
-      "twitter": "/",
-      "instagram": "/"
-    }
-  },
-  "theme": {
-    "color": "blue",
-    "font": "sans",
-    "darkMode": "system"
   }
 }

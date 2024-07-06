@@ -2,7 +2,7 @@
 title: Home
 seo_title: 'Freelance Web Designer & Developer - Worcester, UK'
 content:
-  - title: 'Web designer & developer based in Worcester, UK'
+  - title: 'Web Developer based in Worcester, UK'
     template: hero
   - id: about
     background_colour: Gray-100

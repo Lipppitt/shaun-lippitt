@@ -36,7 +36,7 @@ export const Header = ({ data }) => {
 
     return (
         <header className={`site-header ${!router.query.hasOwnProperty('fromHome') ? 'fadeInDown' : ''}`}>
-            <Container size="custom" className="container-fluid container-md">
+            <Container size="custom" className="container">
                 <div className="d-flex">
                     <a className="logo" href="/">
                         <Logo />
@@ -72,10 +72,10 @@ export const Header = ({ data }) => {
                         <a href="#contact" className="site-header__contact-btn">
                             Contact
                         </a>
+                        <button id="theme_switch" onClick={toggleTheme}>
+                            <ThemeSwitch />
+                        </button>
                     </div>
-                    <button id="theme_switch" onClick={toggleTheme}>
-                        <ThemeSwitch />
-                    </button>
                 </div>
             </Container>
         </header>

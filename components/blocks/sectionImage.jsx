@@ -1,7 +1,5 @@
 import Image from "next/image";
 import {useEffect, useRef} from "react";
-import SplitType from "split-type";
-import {gsap} from "gsap/dist/gsap";
 
 export default function SectionImage({
                                         image,
@@ -30,6 +28,10 @@ export default function SectionImage({
                     title=""
                     width={450}
                     height={450}
+                    style={{
+                        width: '100%',
+                        height: 'auto',
+                    }}
                     className={imageClassName}
                     {...imageProps}
                 />

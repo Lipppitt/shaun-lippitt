@@ -159,12 +159,6 @@ export function ScrollSlider({ slides, SlideComponent, options, dispose = false 
 
         sliderTrack.current.style.width = trackWidth + 'px';
 
-        const sliderNav = slider.querySelector(`.slider-nav`);
-        if (sliderNav) {
-            sliderNav.style.width = __.defaultOptions.containerWidth + 'px';
-            sliderNav.style.margin = '0 auto';
-        }
-
         for (let i = 0; i < slides.length; i++) {
             slides[i].style.width = slideWidth + 'px';
             slides[i].style.paddingLeft = padding + 'px';
@@ -230,7 +224,7 @@ export function ScrollSlider({ slides, SlideComponent, options, dispose = false 
                         // get next slide closest to current slide scroll position
                         const slide = getSlideById(activeSlides[i]);
 
-                        const offsetLeft = slide.offsetLeft - sliderOffset + slide.clientWidth * slidesToScroll - slidePadding;
+                        const offsetLeft = slide.offsetLeft - sliderOffset + slide.clientWidth * slidesToScroll;
 
                         if (offsetLeft > scrollPos) {
                             slider.scrollLeft = offsetLeft;
