@@ -1,46 +1,41 @@
 import React from 'react'
 import Link from 'next/link'
 import {TinaMarkdown} from 'tinacms/dist/rich-text'
-import format from 'date-fns/format'
 import {PostMeta} from "./postMeta";
 import Image from "next/image";
+import useFormattedDate from "../hooks/useFormattedDate";
 
 export const PostCard = ({postData}) => {
-    const post = postData;
-    const date = new Date(post.date)
-    let formattedDate = ''
-    if (!isNaN(date.getTime())) {
-        formattedDate = format(date, 'MMM dd, yyyy')
-    }
+    const formattedDate = useFormattedDate(postData.date);
 
     return (
         <>
             <Link
-                key={post.slug}
-                href={`/posts/` + post.slug}
+                key={postData.slug}
+                href={`/posts/` + postData.slug}
                 passHref
                 className={'post'}
             >
                     <div className={'d-flex flex-column h-100'}>
-                        {post.featured_image && (
+                        {postData.featured_image && (
                             <div className="post-thumbnail">
                                 <Image
-                                    src={post.featured_image}
+                                    src={postData.featured_image}
                                     title=""
                                     width={450}
                                     height={300}
-                                    alt={post.title}
+                                    alt={postData.title}
                                 />
                             </div>
                         )}
                         <h3>
-                            {post.title}{' '}
+                            {postData.title}{' '}
                         </h3>
                         <div>
-                            <TinaMarkdown content={post?.excerpt}/>
+                            <TinaMarkdown content={postData?.excerpt}/>
                         </div>
                         <PostMeta
-                            author={post.author}
+                            author={postData.author}
                             date={formattedDate}
                         />
                     </div>

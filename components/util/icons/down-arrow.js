@@ -1,5 +1,3 @@
-import React from 'react';
-
 function DownArrow() {
 	return (
 		<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"

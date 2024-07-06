@@ -2,7 +2,7 @@ import {ReCaptchaProvider} from "next-recaptcha-v3";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from "@vercel/analytics/react"
 import "../styles/styles.scss";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 
 const spaceGrotesk = localFont({
     src: [

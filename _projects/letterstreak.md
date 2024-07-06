@@ -4,7 +4,7 @@ featuredImage:
 gallery:
   - ''
 title: LetterStreak
-description: 'A daily online browser based game to challenge your vocabulary  '
+description: Daily online browser game
 featured_image: /letterstreak.jpg
 content:
   - background_colour: White

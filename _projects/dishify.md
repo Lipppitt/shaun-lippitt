@@ -1,5 +1,6 @@
 ---
 title: Dishify
+description: Ingredient Recipe Builder
 featured_image: /dishify.jpg
 content:
   - background_colour: White

@@ -1,11 +1,13 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Container} from "../util/container";
 
 export const Footer = ({ data, icon, rawData }) => {
 
-    const getYear = () => {
-        return new Date().getFullYear();
-    }
+    const [year, setYear] = useState(null);
+
+    useEffect(() => {
+        setYear(new Date().getFullYear());
+    }, []);
 
     return (
         <footer className={`site-footer bg-gradient-to-br`}>
@@ -16,7 +18,7 @@ export const Footer = ({ data, icon, rawData }) => {
                         <li><a href="#">Terms of use</a></li>
                         <li><a href="#">Terms & conditions</a></li>
                     </ul>
-                    <p className="legal">&copy; Shaun Lippitt {getYear()} - All Rights Reserved</p>
+                    <p className="legal">&copy; Shaun Lippitt {year} - All Rights Reserved</p>
                 </div>
             </Container>
         </footer>

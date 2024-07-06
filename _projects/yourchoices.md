@@ -1,5 +1,6 @@
 ---
 title: YourChoices
+description: Health Tracking App
 featured_image: /yourchoices.jpg
 content:
   - background_colour: White

@@ -1,8 +1,6 @@
-import * as React from 'react';
-
 function BespokeWebDesign() {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" >
             <g fill="#263238">
                 <path d="M13.5 15a.5.5 0 0 1-.5-.5v-10C13 3.121 11.879 2 10.5 2h-2C7.121 2 6 3.121 6 4.5v8a.5.5 0 1 1-1 0v-8C5 2.57 6.57 1 8.5 1h2C12.43 1 14 2.57 14 4.5v10a.5.5 0 0 1-.5.5zm-8 8a.5.5 0 0 1-.5-.5v-8a.5.5 0 1 1 1 0v8a.5.5 0 0 1-.5.5z"/>
                 <path d="M13.5 23a.5.5 0 0 1-.5-.5V13H5.5a.5.5 0 1 1 0-1h8a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5z"/>

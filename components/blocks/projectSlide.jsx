@@ -63,7 +63,10 @@ export default function ProjectSlide({slide, router}) {
                     />
                     <header className="project-thumbnail__header">
                         <h3>{slide.project.title}</h3>
-                        <span></span>
+
+                        {slide.project.description &&
+                            <span>{slide.project?.description}</span>
+                        }
                     </header>
                 </div>
             </div>

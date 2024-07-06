@@ -1,28 +1,26 @@
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-let id = 0;
+import SliderArrow from "./slider/sliderArrow";
 
 if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger)
 }
 
 export function ScrollSlider({ slides, SlideComponent, options, dispose = false }) {
-
     const elemRef = useRef(null);
     const sliderTrack = useRef(null);
 
     const defaultOptions = {
         autoWidth: false,
-        containerWidth: '100%',
+        containerWidth: "100%",
         slidesToShow: 1,
         mobileFirst: true,
         slidesToScroll: 1,
         sliderPadding: 24,
         slidePadding: 12,
-        nextBtn: '<button class="btn btn-arrow next-arrow" data-action="next"></button>',
-        prevBtn: '<button class="btn btn-arrow prev-arrow" data-action="prev"></button>',
+        nextBtn: <SliderArrow dir="next"/>,
+        prevBtn: <SliderArrow dir="prev"/>,
         responsive: [
             {
                 breakpoint: 1400,
@@ -63,7 +61,6 @@ export function ScrollSlider({ slides, SlideComponent, options, dispose = false 
     const __ = {
         el: null,
         slidesCount: slides.length,
-        sliderId: ++id,
         activeSlides: [],
         slideWidth: 0,
         sliderOffset: 0,
@@ -81,18 +78,17 @@ export function ScrollSlider({ slides, SlideComponent, options, dispose = false 
         __.el = elem;
 
         setWidths();
-        setActiveSlides();
-        initEventHandlers();
 
         __.el.classList.add('initialised');
+
+        setActiveSlides();
+        initEventHandlers();
     }
 
     function destroy() {
         removeEventListeners();
 
         const slider = __.el;
-        const sliderNav = document.querySelector(`.slider-nav[data-slider-id="${__.sliderId}"]`);
-
         if (sliderTrack.current) {
             sliderTrack.current.style.width = 'auto';
         }
@@ -100,16 +96,10 @@ export function ScrollSlider({ slides, SlideComponent, options, dispose = false 
         if (slider) {
             slider.style = '';
             slider.classList.remove('initialised');
-            slider.removeAttribute('data-slider-id');
-        }
-
-        if (sliderNav) {
-            sliderNav.remove();
         }
     }
 
     function setWidths() {
-
         let windowWidth = window.innerWidth;
 
         // sort breakpoints
@@ -137,6 +127,7 @@ export function ScrollSlider({ slides, SlideComponent, options, dispose = false 
             }
         }
 
+
         // Fallback to window width if container width is greater than window width
         if (windowWidth < __.defaultOptions.containerWidth || __.defaultOptions.containerWidth === '100%') {
             __.defaultOptions.containerWidth = windowWidth;
@@ -159,12 +150,16 @@ export function ScrollSlider({ slides, SlideComponent, options, dispose = false 
         __.sliderOffset = sliderOffset;
         __.slideWidth = slideWidth;
 
-        const trackWidth = slideWidth * slidesCount;
+        let trackWidth = slideWidth * slidesCount;
         const slides = slider.querySelectorAll('.scroll-slide');
+
+        if (__.defaultOptions.sliderPadding === 0) {
+            trackWidth = trackWidth + padding * 2;
+        }
 
         sliderTrack.current.style.width = trackWidth + 'px';
 
-        const sliderNav = document.querySelector(`.slider-nav[data-slider-id="${__.sliderId}"]`);
+        const sliderNav = slider.querySelector(`.slider-nav`);
         if (sliderNav) {
             sliderNav.style.width = __.defaultOptions.containerWidth + 'px';
             sliderNav.style.margin = '0 auto';
@@ -179,10 +174,14 @@ export function ScrollSlider({ slides, SlideComponent, options, dispose = false 
 
     function initEventHandlers() {
         const slider = __.el;
-        const sliderNav = document.querySelector(`.slider-nav[data-slider-id="${__.sliderId}"]`);
+        if (!slider) {
+            return;
+        }
+
+        const sliderNav = slider.querySelector(`.slider-nav`);
 
         if (sliderNav) {
-            const sliderButtons = sliderNav.querySelector('.slide-nav-buttons');
+            const sliderButtons = sliderNav.querySelector('.slider-nav-buttons');
             sliderButtons.addEventListener('click', (e) => clickHandler(e, slider));
         }
 
@@ -192,10 +191,10 @@ export function ScrollSlider({ slides, SlideComponent, options, dispose = false 
 
     function removeEventListeners() {
         const slider = __.el;
-        const sliderNav = document.querySelector(`.slider-nav[data-slider-id="${__.sliderId}"]`);
+        const sliderNav = slider.querySelector(`.slider-nav`);
 
         if (sliderNav) {
-            const sliderButtons = sliderNav.querySelector('.slide-nav-buttons');
+            const sliderButtons = sliderNav.querySelector('.slider-nav-buttons');
             sliderButtons.removeEventListener('click', (e) => clickHandler(e, slider));
             slider.removeEventListener('scroll', (e) => scrollHandler(e, slider));
             window.removeEventListener('resize', (e) => resizeHandler(e, slider));
@@ -212,6 +211,7 @@ export function ScrollSlider({ slides, SlideComponent, options, dispose = false 
             let scrollPos = slider.scrollLeft;
 
             const sliderOffset = __.sliderOffset,
+                slidePadding = __.defaultOptions.slidePadding,
                 slidesToScroll = __.defaultOptions.slidesToScroll;
 
             let activeSlides = __.activeSlides.sort((a, b) => {
@@ -229,19 +229,37 @@ export function ScrollSlider({ slides, SlideComponent, options, dispose = false 
                     for (let i = 0; i < activeSlides.length; i++) {
                         // get next slide closest to current slide scroll position
                         const slide = getSlideById(activeSlides[i]);
-                        const offsetLeft = slide.offsetLeft - sliderOffset + slide.clientWidth * slidesToScroll;
+
+                        const offsetLeft = slide.offsetLeft - sliderOffset + slide.clientWidth * slidesToScroll - slidePadding;
 
                         if (offsetLeft > scrollPos) {
                             slider.scrollLeft = offsetLeft;
+
+                            if (__.defaultOptions.sliderPadding > 0) {
+                                slider.scrollLeft = offsetLeft - slidePadding;
+                            } else {
+                                slider.scrollLeft = offsetLeft + slidePadding * 2;
+                            }
                             break;
                         }
+
                     }
                     break;
 
                 case 'prev':
                     const prevSlide = getSlideById(activeSlides[0] - __.defaultOptions.slidesToScroll);
                     if (!prevSlide) return;
-                    slider.scrollLeft = prevSlide.offsetLeft - sliderOffset;
+
+                    const offsetLeft = prevSlide.offsetLeft - sliderOffset;
+
+                    slider.scrollLeft = offsetLeft;
+
+                    if (__.defaultOptions.sliderPadding > 0) {
+                        slider.scrollLeft = offsetLeft - slidePadding;
+                    } else {
+                        slider.scrollLeft = offsetLeft + slidePadding;
+                    }
+
                     break;
             }
         }
@@ -252,8 +270,7 @@ export function ScrollSlider({ slides, SlideComponent, options, dispose = false 
     }
 
     function setActiveSlides() {
-        const ele = __.el;
-        const slides = ele.querySelectorAll('.scroll-slider .scroll-slide');
+        const slides = __.el.querySelectorAll('.scroll-slide');
 
         for (let i = 0; i < slides.length; i++) {
             let slide = slides[i],
@@ -279,10 +296,23 @@ export function ScrollSlider({ slides, SlideComponent, options, dispose = false 
     }
 
     function isVisible(slide) {
-        const width = __.defaultOptions.containerWidth;
+        const width = __.defaultOptions.containerWidth - __.defaultOptions.sliderPadding * 2;
+        const slideWidth = slide.clientWidth + __.defaultOptions.slidePadding;
         const offset = Math.floor(Math.abs(__.el.scrollLeft));
-        const left = Math.floor(slide.offsetLeft - __.sliderOffset + slide.clientWidth);
-        const right = Math.floor(left - __.sliderOffset - offset);
+        const left = Math.floor(slide.offsetLeft - __.sliderOffset + slideWidth) - __.defaultOptions.sliderPadding * 2;
+        const right = Math.floor(left - __.sliderOffset - offset) - __.defaultOptions.sliderPadding * 2;
+        //
+        // console.log({
+        //     slideOffsetLeft: slide.offsetLeft,
+        //     sliderOffset: __.sliderOffset,
+        //     slideWidth: slide.clientWidth,
+        //     width: width,
+        //     offset: offset,
+        //     left: left,
+        //     right: right
+        // });
+
+
         return left > 0 && offset < left && right <= width;
     }
 
@@ -306,12 +336,12 @@ export function ScrollSlider({ slides, SlideComponent, options, dispose = false 
                     </div>
                 ))}
             </div>
-            {/*<div className={"slider-nav"}>*/}
-            {/*    <div className={"slider-nav-buttons"}>*/}
-            {/*        {__.defaultOptions.prevBtn}*/}
-            {/*        { __.defaultOptions.nextBtn}*/}
-            {/*    </div>*/}
-            {/*</div>*/}
+            <div className={"slider-nav"}>
+                <div className={"slider-nav-buttons"}>
+                    {__.defaultOptions.prevBtn}
+                    { __.defaultOptions.nextBtn}
+                </div>
+            </div>
         </div>
     );
 }
