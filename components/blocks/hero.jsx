@@ -22,7 +22,6 @@ export default function Hero({title, lead, children}) {
             opacity: 0,
             stagger: 0.025,
             visibility: 'visible',
-            delay: 1
         });
     }, []);
 
