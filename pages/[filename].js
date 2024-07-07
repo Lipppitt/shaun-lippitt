@@ -73,7 +73,7 @@ export default function Filename(props) {
   )
 }
 
-export async function getServerSideProps({params}) {
+export async function getStaticProps({params}) {
     let pageResponse = {}
     let posts = {};
     try {
@@ -105,4 +105,14 @@ export async function getServerSideProps({params}) {
             ...pageProps
         }
     };
+}
+
+export const getStaticPaths = async () => {
+    const postListResponse = await client.queries.postsConnection()
+    return {
+        paths: postListResponse.data.postsConnection.edges.map((page) => ({
+            params: { filename: page.node._sys.filename },
+        })),
+        fallback: 'blocking',
+    }
 }
