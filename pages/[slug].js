@@ -9,7 +9,7 @@ import Head from "next/head";
 import {LoadingSplashScreen} from "../components/layout/splash-screen";
 import {useEffect, useState} from "react";
 
-export default function Filename(props) {
+export default function Slug(props) {
     const { data } = useTina({
         query: props.query,
         variables: props.variables,
@@ -80,7 +80,7 @@ export const getStaticPaths = async () => {
         // Fetch all available page filenames
         const pageListResponse = await client.queries.pagesConnection();
         const pagePaths = pageListResponse.data.pagesConnection.edges.map((page) => ({
-            params: { filename: page.node._sys.filename },
+            params: { slug: page.node._sys.filename },
         }));
 
         // Combine page paths and post paths into the paths array
@@ -100,7 +100,7 @@ export async function getStaticProps({ params }) {
     let postResponse = {};
 
     try {
-        pageResponse = await client.queries.pages({relativePath: `${params.filename}.md`});
+        pageResponse = await client.queries.pages({relativePath: `${params.slug}.md`});
         postResponse = await client.queries.postsConnection({first: 2});
 
     } catch (error) {

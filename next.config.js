@@ -8,7 +8,7 @@ const nextConfig = {
   async rewrites() {
     return [{
       source: '/',
-      destination: '/index'
+      destination: '/home'
     }]
   }
 }
