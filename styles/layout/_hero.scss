@@ -83,3 +83,33 @@ a.hero-page-down-arrow {
 .d {
   opacity: .2;
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(100px);
+  }
+}
+
+path#mouse {
+  fill: none;
+  stroke: #afafaf;
+  stroke-width: 4px;
+}
+
+.hero-page-down svg {
+  fill-rule: evenodd;
+  clip-rule:evenodd;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:1.5;
+}
+
+svg #wheel {
+  animation: scroll ease 1.5s infinite;
+  stroke: #afafaf;
+  stroke-width: 8px;
+  fill: none;
+}

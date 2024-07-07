@@ -34,9 +34,8 @@ export default function ProjectSlider({
                     trigger: el.current,
                     scrub: false,
                 },
-                x: 50,
+                opacity: 1,
                 visibility: 'visible',
-                delay: .5,
             });
         }
 
