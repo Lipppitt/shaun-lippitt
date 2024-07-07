@@ -56,16 +56,6 @@
   }
 }
 
-@keyframes sectionTitleLine {
-  0% {
-    transform: scale(0, 1);
-  }
-  100% {
-    transform: scale(1);
-    visibility: visible;
-  }
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .fadeIn {
     animation-name: fadeIn;

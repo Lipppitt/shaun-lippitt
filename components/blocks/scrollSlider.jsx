@@ -270,7 +270,7 @@ export function ScrollSlider({ slides, SlideComponent, options, dispose = false 
             let slide = slides[i],
                 slideId = parseInt(slide.dataset.slideIndex);
 
-            if (isVisible(slide)) {
+            if (isActive(slide)) {
                 slide.classList.add('slide-active');
                 if (!__.activeSlides.includes(slideId)) {
                     __.activeSlides.push(slideId);
@@ -289,24 +289,12 @@ export function ScrollSlider({ slides, SlideComponent, options, dispose = false 
         return __.el.querySelector(`.scroll-slide[data-slide-index="${slideId}"]`);
     }
 
-    function isVisible(slide) {
+    function isActive(slide) {
         const width = __.defaultOptions.containerWidth - __.defaultOptions.sliderPadding * 2;
         const slideWidth = slide.clientWidth + __.defaultOptions.slidePadding;
         const offset = Math.floor(Math.abs(__.el.scrollLeft));
         const left = Math.floor(slide.offsetLeft - __.sliderOffset + slideWidth) - __.defaultOptions.sliderPadding * 2;
         const right = Math.floor(left - __.sliderOffset - offset) - __.defaultOptions.sliderPadding * 2;
-        //
-        // console.log({
-        //     slideOffsetLeft: slide.offsetLeft,
-        //     sliderOffset: __.sliderOffset,
-        //     slideWidth: slide.clientWidth,
-        //     width: width,
-        //     offset: offset,
-        //     left: left,
-        //     right: right
-        // });
-
-
         return left > 0 && offset < left && right <= width;
     }
 

@@ -1,7 +1,36 @@
 import { TinaMarkdown } from 'tinacms/dist/rich-text'
 import Button from './rich-text/button';
+import useGSAP from "../hooks/useGsap";
+import {useEffect, useRef} from "react";
+import {gsap} from "gsap/dist/gsap";
 
 export default function SectionText({text}) {
+
+    const el = useRef(null);
+
+    useGSAP();
+
+    useEffect(() => {
+        let ctx;
+
+        if (el.current !== null) {
+            ctx = gsap.from(el.current, {
+                scrollTrigger: {
+                    start: "top 80%", // Adjust as needed
+                    trigger: el.current,
+                    scrub: false,
+                },
+                y: 10,
+                opacity: 0,
+                stagger: 0.025,
+                visibility: 'visible',
+                delay: .5,
+            });
+        }
+
+        return () => ctx?.revert();
+    }, []);
+
 
     const components = {
         Button: (props) => {
@@ -17,7 +46,7 @@ export default function SectionText({text}) {
     }
 
     return (
-        <div className="section__content fadeIn">
+        <div ref={el} className="section__content">
             <TinaMarkdown content={text} components={components}/>
         </div>
     )

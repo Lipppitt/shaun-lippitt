@@ -2,7 +2,9 @@ import SectionHeader from "./sectionHeader";
 import {ScrollSlider} from "./scrollSlider";
 import ProjectSlide from "./projectSlide";
 import {useRouter} from "next/router";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
+import {gsap} from "gsap/dist/gsap";
+import useGSAP from "../hooks/useGsap";
 
 export default function ProjectSlider({
     title,
@@ -13,11 +15,32 @@ export default function ProjectSlider({
 
     const router = useRouter();
 
+    const el = useRef(null);
+
+    useGSAP();
+
     useEffect(() => {
         if (typeof window !== 'undefined') {
             const storedViewMode = window.localStorage.getItem('projectViewMode');
             setActiveViewMode(storedViewMode ?? 'slider');
         }
+
+        let ctx;
+
+        if (el.current !== null) {
+            ctx = gsap.from(el.current, {
+                scrollTrigger: {
+                    start: "top 50%", // Adjust as needed
+                    trigger: el.current,
+                    scrub: false,
+                },
+                x: 50,
+                visibility: 'visible',
+                delay: .5,
+            });
+        }
+
+        return () => ctx?.revert();
     }, []);
 
     const toggleViewMode = () => {
@@ -27,7 +50,7 @@ export default function ProjectSlider({
     }
 
     return (
-        <section className={`section section-about bg-${backgroundColour}`}>
+        <section  className={`section section-about bg-${backgroundColour}`}>
             <div className={'container'}>
                 <SectionHeader
                     title={title}
@@ -35,11 +58,13 @@ export default function ProjectSlider({
                 />
             </div>
                 {/*<button onClick={() => toggleViewMode()}>Grid mode</button>*/}
-                <ScrollSlider slides={projects}
-                              dispose={activeViewMode === 'grid'}
-                              SlideComponent={(props) => <ProjectSlide {...props} router={router}
-                  />}
-                />
+                <div ref={el}>
+                    <ScrollSlider slides={projects}
+                                  dispose={activeViewMode === 'grid'}
+                                  SlideComponent={(props) => <ProjectSlide {...props} router={router}
+                                  />}
+                    />
+                </div>
         </section>
     )
 }

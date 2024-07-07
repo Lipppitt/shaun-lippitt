@@ -2,6 +2,7 @@ import {useEffect, useLayoutEffect, useRef} from "react";
 import useGSAP from "../hooks/useGsap";
 import SplitType from "split-type";
 import {gsap} from "gsap/dist/gsap";
+import {AnimatedLine} from "../util/animated-line";
 
 export default function SectionHeader({
     title,
@@ -12,7 +13,6 @@ export default function SectionHeader({
     useGSAP();
 
     useEffect(() => {
-
         let ctx;
 
         if (el.current !== null) {
@@ -30,8 +30,6 @@ export default function SectionHeader({
                 visibility: 'visible',
                 delay: .5,
             });
-
-            console.log(title, ctx.scrollTrigger);
         }
 
         return () => ctx?.revert();
@@ -39,7 +37,12 @@ export default function SectionHeader({
 
     return (
         <>
-            <h2 className="section__title" ><span ref={el} className="d-block section__title-text">{title}</span></h2>
+            <h2 className="section__title">
+                <AnimatedLine/>
+                <span ref={el} className="d-block section__title-text">
+                    {title}
+                </span>
+            </h2>
             {lead?.length > 0 && <p className="section__lead">{lead}</p>}
         </>
     )

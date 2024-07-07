@@ -4,6 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 
   h1 {
     font-size: 3rem;
@@ -55,4 +57,29 @@ a.hero-page-down-arrow {
     width: 100%;
     height: auto;
   }
+}
+
+
+
+// background
+.hero-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
+  bottom: 0;
+  height: 100vh;
+  width: 48%;
+}
+
+ .a {
+   fill: #232323;
+ }
+
+.b {
+  fill: #40faa6;
+}
+
+.d {
+  opacity: .2;
 }
