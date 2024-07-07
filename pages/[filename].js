@@ -73,46 +73,57 @@ export default function Filename(props) {
   )
 }
 
-export async function getStaticProps({params}) {
-    let pageResponse = {}
-    let posts = {};
-    try {
-        pageResponse = await client.queries.pages({ relativePath: `${params.filename}.md` });
-        posts = await client.queries.postsConnection({ first: 2 });
+export const getStaticPaths = async () => {
+    let paths = [];
 
-    } catch {
-        // swallow errors related to document creation
+    try {
+        // Fetch all available page filenames
+        const pageListResponse = await client.queries.pagesConnection();
+        const pagePaths = pageListResponse.data.pagesConnection.edges.map((page) => ({
+            params: { filename: page.node._sys.filename },
+        }));
+
+        // Combine page paths and post paths into the paths array
+        paths = [...pagePaths];
+    } catch (error) {
+        console.error('Error fetching paths:', error);
+    }
+
+    return {
+        paths,
+        fallback: 'blocking',
+    };
+};
+
+export async function getStaticProps({ params }) {
+    let pageResponse = {};
+    let postResponse = {};
+
+    try {
+        pageResponse = await client.queries.pages({relativePath: `${params.filename}.md`});
+        postResponse = await client.queries.postsConnection({first: 2});
+
+    } catch (error) {
+        console.error('Error fetching page data:', error);
     }
 
     const pageProps = {
-            data: pageResponse?.data,
-            query: pageResponse.query,
-            variables: pageResponse.variables,
-            posts: posts?.data?.postsConnection.edges.map((post) => {
-                return {
-                    slug: post.node._sys.filename,
-                    date: post.node.date,
-                    title: post.node.title,
-                    excerpt: post.node.excerpt,
-                    featured_image: post.node.featured_image,
-                    author: post.node.author
-                }
-            })
-    }
+        data: pageResponse?.data,
+        query: pageResponse?.query,
+        variables: pageResponse?.variables,
+        posts: postResponse?.data?.postsConnection.edges.map((post) => ({
+            slug: post.node._sys.filename,
+            date: post.node.date,
+            title: post.node.title,
+            excerpt: post.node.excerpt,
+            featured_image: post.node.featured_image,
+            author: post.node.author
+        }))
+    };
 
     return {
         props: {
             ...pageProps
         }
     };
-}
-
-export const getStaticPaths = async () => {
-    const postListResponse = await client.queries.postsConnection()
-    return {
-        paths: postListResponse.data.postsConnection.edges.map((page) => ({
-            params: { filename: page.node._sys.filename },
-        })),
-        fallback: 'blocking',
-    }
 }
