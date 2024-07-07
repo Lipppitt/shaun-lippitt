@@ -28,10 +28,15 @@
 
 .single-project {
   display: flex;
+  flex-wrap: wrap;
   padding-top: 5.5rem;
 
   .section {
-    padding: 3rem 2rem;
+    padding: 3rem 0;
+
+    @media (min-width: 768px) {
+      padding: 3rem 2rem;
+    }
 
     &__title {
       margin-bottom: .75rem;
