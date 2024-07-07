@@ -15,13 +15,13 @@ export default function Filename(props) {
       <>
           <Layout rawData={data} data={data.global}>
               <div className="single-project">
-                  <div className="col-md-6">
+                  <div className="col-12 col-lg-6">
                       <div
                           className="project-thumbnail__image"
                           style={{backgroundImage: `url(${data.projects.featured_image})`, backgroundSize: 'cover'}}
                       />
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-12 col-lg-6">
                       {props.data.projects.content?.map((content, index) => {
                           let template = content.__typename;
                           switch (template) {

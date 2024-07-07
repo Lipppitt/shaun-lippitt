@@ -47,8 +47,12 @@
 
   .project-thumbnail__image {
     padding-bottom: 0;
-    height: 100vh;
+    height: 30vh;
     margin-bottom: 0;
+
+    @media (min-width: 768px) {
+      height: 100vh;
+    }
 
     &:after {
       content: "";
@@ -62,6 +66,7 @@
     }
   }
 }
+
 
 
 #project_info_panel {

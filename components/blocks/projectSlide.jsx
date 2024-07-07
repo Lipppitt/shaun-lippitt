@@ -4,6 +4,11 @@ import { gsap } from "gsap/dist/gsap";
 export default function ProjectSlide({slide, router}) {
     const slideRef = useRef(null);
 
+    // Function to determine if the screen is mobile
+    function isMobile() {
+        return window.innerWidth <= 768; // or any breakpoint you consider as mobile
+    }
+
     const handleOnClick = (slide) => {
         const thumbnailImage = slideRef.current.querySelector('.project-thumbnail__image');
         const clonedThumbnail = thumbnailImage.cloneNode(true);
@@ -25,6 +30,10 @@ export default function ProjectSlide({slide, router}) {
 
         // Animate the cloned thumbnail
         setTimeout(() => {
+            // Determine the target width based on screen size
+            const targetWidth = isMobile() ? '100%' : '50%';
+            const targetHeight = isMobile() ? '30%' : '100%';
+
             gsap.fromTo(clonedThumbnail, {
                 left: rect.left + 'px', // Adjust to be relative to the viewport
                 top: rect.top + 'px', // Adjust to be relative to the viewport
@@ -32,8 +41,8 @@ export default function ProjectSlide({slide, router}) {
             }, {
                 left: 0,
                 top: 0,
-                width: "50%",
-                height: "100%",
+                width: targetWidth,
+                height: targetHeight,
                 marginTop: "5.5rem",
                 onComplete: () => {
                     // Scroll the body to the top of the page
