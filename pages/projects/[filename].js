@@ -48,6 +48,9 @@ export const getStaticPaths = async () => {
     try {
         // Fetch all available page filenames
         const projectListResponse = await client.queries.projectsConnection();
+        const projectPaths = projectListResponse.data.projectsConnection.edges.map((project) => ({
+            params: { slug: project.node._sys.filename },
+        }));
 
         // Combine page paths and post paths into the paths array
         paths = [...projectListResponse];
