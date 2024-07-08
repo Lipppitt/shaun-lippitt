@@ -64,7 +64,7 @@ export const getStaticPaths = async () => {
     };
 };
 
-export async function getServerSideProps({params}) {
+export async function getStaticProps({params}) {
     let projectResponse = {}
     try {
         projectResponse = await client.queries.projects({ relativePath: `${params.filename}.md` })
