@@ -1,6 +1,5 @@
 import {useTina} from "tinacms/dist/react";
 import {Layout} from "../../components/layout/layout";
-import Hero from "../../components/blocks/hero";
 import client from "../../tina/__generated__/client";
 import Section from "../../components/blocks/section";
 
@@ -43,19 +42,38 @@ export default function Filename(props) {
   )
 }
 
-export async function getServerSideProps({params}) {
-    let postResponse = {}
+export const getStaticPaths = async () => {
+    let paths = [];
+
     try {
-        postResponse = await client.queries.projects({ relativePath: `${params.filename}.md` })
+        // Fetch all available page filenames
+        const projectListResponse = await client.queries.projectsConnection();
+
+        // Combine page paths and post paths into the paths array
+        paths = [...projectListResponse];
+    } catch (error) {
+        console.error('Error fetching paths:', error);
+    }
+
+    return {
+        paths,
+        fallback: 'blocking',
+    };
+};
+
+export async function getServerSideProps({params}) {
+    let projectResponse = {}
+    try {
+        projectResponse = await client.queries.projects({ relativePath: `${params.filename}.md` })
     } catch {
         // swallow errors related to document creation
     }
 
     return {
         props: {
-            data: postResponse.data,
-            query: postResponse.query,
-            variables: postResponse.variables,
+            data: projectResponse.data,
+            query: projectResponse.query,
+            variables: projectResponse.variables,
         },
     }
 }
