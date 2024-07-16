@@ -18,8 +18,12 @@ export default function ServiceGridItem({title, icon, short_description, link}) 
                     }}
                     className="w-7 h-auto"
                 />
-                <h3>{title}</h3>
-                <p>{short_description}</p>
+                <div className="service-inner">
+                    <h3>{title}</h3>
+                    <p>{short_description}</p>
+                </div>
+
+                <span className="page-link-button"></span>
             </div>
             </Link>
         </div>

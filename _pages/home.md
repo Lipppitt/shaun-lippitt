@@ -24,11 +24,9 @@ content:
     template: section
   - projects:
       - project: _projects/devflow.md
-      - project: _projects/at-solutions.md
+      - project: _projects/letterstreak.md
       - project: _projects/yourchoices.md
       - project: _projects/dishify.md
-      - project: _projects/letterstreak.md
-      - project: _projects/greybox-self-storage.md
     template: project-slider
   - id: services
     background_colour: Gray-100
@@ -99,5 +97,4 @@ content:
             template: form
     template: section
 ---
-
 

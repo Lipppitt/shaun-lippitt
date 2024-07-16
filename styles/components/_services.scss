@@ -3,11 +3,11 @@
   @include media-breakpoint-up('sm') {
     margin-bottom: 4.5rem;
   }
-  padding: 0 2rem 0 0;
 
   p {
     font-size: 1rem;
     line-height: 1.7;
+    color: #727272;
   }
 
   svg {
@@ -22,4 +22,43 @@
 .services a {
   color: inherit;
   text-decoration: none;
+  height: 100%;
+  padding: 2rem;
+  display: inline-block;
+  background-color: white;
+  border-radius: .5rem;
+  transition: all ease 500ms;
+  position: relative;
+}
+
+.services > div {
+  margin-bottom: 1.5rem;
+}
+
+.services a:hover {
+  box-shadow: 0 0 30px rgba(black, .1);
+}
+
+.services .service-inner {
+  transition: all ease 300ms;
+}
+
+.services a:hover .service-inner {
+  transform: translateY(-.5rem);
+}
+
+.services a .page-link-button {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  bottom: 1.25rem;
+  left: 1.5rem;
+  transform: scale(0.5) translate(14px);
+  opacity: 0;
+  transition: all ease 200ms;
+}
+
+.services a:hover .page-link-button {
+  transform: scale(1) translate(0px, 0px);
+  opacity: 1;
 }
