@@ -23,7 +23,6 @@ export default function ServiceGridItem({title, icon, short_description, link}) 
                     <p>{short_description}</p>
                 </div>
 
-                <span className="page-link-button"></span>
             </div>
             </Link>
         </div>

@@ -23,9 +23,7 @@
   color: inherit;
   text-decoration: none;
   height: 100%;
-  padding: 2rem;
   display: inline-block;
-  background-color: white;
   border-radius: .5rem;
   transition: all ease 500ms;
   position: relative;
@@ -35,30 +33,4 @@
   margin-bottom: 1.5rem;
 }
 
-.services a:hover {
-  box-shadow: 0 0 30px rgba(black, .1);
-}
 
-.services .service-inner {
-  transition: all ease 300ms;
-}
-
-.services a:hover .service-inner {
-  transform: translateY(-.5rem);
-}
-
-.services a .page-link-button {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  bottom: 1.25rem;
-  left: 1.5rem;
-  transform: scale(0.5) translate(14px);
-  opacity: 0;
-  transition: all ease 200ms;
-}
-
-.services a:hover .page-link-button {
-  transform: scale(1) translate(0px, 0px);
-  opacity: 1;
-}

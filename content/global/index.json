@@ -16,10 +16,6 @@
     "name": "Shaun Lippitt",
     "nav": [
       {
-        "href": "#services",
-        "label": "Services"
-      },
-      {
         "href": "#about",
         "label": "About"
       },
@@ -28,8 +24,8 @@
         "label": "Projects"
       },
       {
-        "href": "posts",
-        "label": "Blog"
+        "href": "#services",
+        "label": "Services"
       }
     ]
   }
